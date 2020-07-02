@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navgraph"
+    app:startDestination="@id/fragmentNoticias">
+
+    <fragment
+        android:id="@+id/fragmentNoticias"
+        android:name="com.example.recyclerviewnoticia.fragments.FragmentNoticias"
+        android:label="fragment_noticias"
+        tools:layout="@layout/fragment_noticias" >
+        <action
+            android:id="@+id/action_fragmentNoticias_to_noticia"
+            app:destination="@id/noticia" />
+    </fragment>
+    <fragment
+        android:id="@+id/noticia"
+        android:name="com.example.recyclerviewnoticia.fragments.Noticia"
+        android:label="fragment_noticia"
+        tools:layout="@layout/fragment_noticia" >
+        <argument
+            android:name="Titulo"
+            app:argType="string" />
+        <argument
+            android:name="Cuerpo"
+            app:argType="string" />
+        <argument
+            android:name="Fecha"
+            app:argType="string" />
+        <argument
+            android:name="Autor"
+            app:argType="string" />
+    </fragment>
+</navigation>
