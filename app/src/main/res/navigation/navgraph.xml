@@ -31,5 +31,8 @@
         <argument
             android:name="Autor"
             app:argType="string" />
+        <action
+            android:id="@+id/action_noticia_to_fragmentNoticias"
+            app:destination="@id/fragmentNoticias" />
     </fragment>
 </navigation>

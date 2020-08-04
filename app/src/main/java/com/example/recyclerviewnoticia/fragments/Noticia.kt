@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 
 import com.example.recyclerviewnoticia.R
@@ -20,6 +21,7 @@ class Noticia : Fragment() {
     lateinit var txtTitulo: TextView
     lateinit var txtCuerpo: TextView
     lateinit var txtAutor: TextView
+    lateinit var btnVolver: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +34,7 @@ class Noticia : Fragment() {
         txtTitulo = v.findViewById(R.id.txtTitulo)
         txtCuerpo = v.findViewById(R.id.txtCuerpo)
         txtAutor = v.findViewById(R.id.txtAutor)
+        btnVolver = v.findViewById(R.id.btnVolver)
         return v
     }
 
@@ -47,5 +50,9 @@ class Noticia : Fragment() {
         txtTitulo.text = Titulo
         txtCuerpo.text = Cuerpo
         txtAutor.text = Autor
+
+        btnVolver.setOnClickListener {
+
+        }
     }
 }
