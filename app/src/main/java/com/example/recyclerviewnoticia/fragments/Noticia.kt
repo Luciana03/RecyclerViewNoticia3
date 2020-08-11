@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.navigation.findNavController
 
 import com.example.recyclerviewnoticia.R
 
@@ -52,7 +53,8 @@ class Noticia : Fragment() {
         txtAutor.text = Autor
 
         btnVolver.setOnClickListener {
-
+            val a21 = NoticiaDirections.actionNoticiaToFragmentNoticias()
+            v.findNavController().navigate(a21)
         }
     }
 }
