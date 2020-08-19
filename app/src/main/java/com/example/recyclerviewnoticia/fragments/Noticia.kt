@@ -6,10 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.findNavController
+import com.bumptech.glide.Glide
 
 import com.example.recyclerviewnoticia.R
+import kotlinx.android.synthetic.main.fragment_noticia.*
 
 /**
  * A simple [Fragment] subclass.
@@ -23,6 +26,7 @@ class Noticia : Fragment() {
     lateinit var txtCuerpo: TextView
     lateinit var txtAutor: TextView
     lateinit var btnVolver: Button
+    lateinit var imgNoticia: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +40,7 @@ class Noticia : Fragment() {
         txtCuerpo = v.findViewById(R.id.txtCuerpo)
         txtAutor = v.findViewById(R.id.txtAutor)
         btnVolver = v.findViewById(R.id.btnVolver)
+        imgNoticia = v.findViewById(R.id.imgNoticia)
         return v
     }
 
@@ -46,11 +51,18 @@ class Noticia : Fragment() {
         val Titulo = NoticiaArgs.fromBundle(requireArguments()).Titulo
         val Cuerpo = NoticiaArgs.fromBundle(requireArguments()).Cuerpo
         val Autor = NoticiaArgs.fromBundle(requireArguments()).Autor
+        val urlImage = NoticiaArgs.fromBundle(requireArguments()).urlImage
 
         txtFecha.text = Fecha
         txtTitulo.text = Titulo
         txtCuerpo.text = Cuerpo
         txtAutor.text = Autor
+
+        Glide
+            .with(v)
+            .load(urlImage)
+            .centerCrop()
+            .into(imgNoticia)
 
         btnVolver.setOnClickListener {
             val a21 = NoticiaDirections.actionNoticiaToFragmentNoticias()

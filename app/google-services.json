@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "233594583009",
+    "firebase_url": "https://luli-prueba.firebaseio.com",
+    "project_id": "luli-prueba",
+    "storage_bucket": "luli-prueba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233594583009:android:1446d71d7e40c6cc65c4a0",
+        "android_client_info": {
+          "package_name": "com.example.recyclerviewnoticia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "233594583009-53k7ghntlht3tu8nuuj63ds6b9mgnva1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5qE9-MVMwoq19iyU1OZJVAyOn8eTJTDA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "233594583009-53k7ghntlht3tu8nuuj63ds6b9mgnva1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -4,9 +4,11 @@ import android.service.autofill.OnClickAction
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.recyclerviewnoticia.R
 import com.example.recyclerviewnoticia.entities.noticia
 
@@ -23,8 +25,19 @@ class NoticiaListAdapter (private var noticiaList : MutableList<noticia>,val onI
             val txt_name_item : TextView = v.findViewById(R.id.txt_name_item)
             txt_name_item.text = name
         }
+        fun setImage (image: String){
+            val img_item : ImageView = v.findViewById(R.id.img_item)
+            Glide
+                .with(img_item)
+                .load(image)
+                .centerCrop()
+                .into(getImageView())
+        }
         fun getCardLayout (): CardView {
             return v.findViewById(R.id.card_package_item)
+        }
+        fun getImageView () : ImageView {
+            return v.findViewById(R.id.img_item)
         }
     }
 
@@ -41,6 +54,7 @@ class NoticiaListAdapter (private var noticiaList : MutableList<noticia>,val onI
 
     override fun onBindViewHolder(holder: NoticiaHolder, position: Int) { // esto relacionará la información de nuestra lista con la visualización del item
         holder.setName(noticiaList[position].titulo)
+        holder.setImage(noticiaList[position].urlImage)
         holder.getCardLayout().setOnClickListener {
             onItemClick(position)
         }
